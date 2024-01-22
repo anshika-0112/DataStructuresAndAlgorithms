@@ -21,7 +21,7 @@ import java.util.ArrayList;
     Output :
     1 3 4
     Explanation :
-    Sum of path 1, 3, 4 = 8
+    Sum of path 1, 3, 4 = 8.
  */
 public class Jan_22_PathsFromRoot {
     static ArrayList<ArrayList<Integer>> res;

@@ -43,18 +43,20 @@ public class CoinChange {
     }
 
     // Recursive Approach
-    public int helper(int[] coins,int amount,int n){
-        if(n==0){
+    public int solve(int[] coins,int amount)
+    {
+        if(amount==0){
             return 0;
         }
-        if(amount==0){
-            return 1;
+        int res=Integer.MAX_VALUE;
+        for(int i=0;i<coins.length;i++){
+            if(coins[i]<=amount){
+                int c=solve(coins,amount-coins[i]);
+                if(c!=Integer.MAX_VALUE){
+                    res=Math.min(res,c+1);
+                }
+            }
         }
-        int ch1=0, ch2=0;
-        if(amount>=coins[n-1]){
-            ch1= 1 +helper(coins,amount-coins[n-1],n-1);
-        }
-        ch2= helper(coins,amount,n-1);
-        return Math.min(ch1,ch2);
+        return res;
     }
 }

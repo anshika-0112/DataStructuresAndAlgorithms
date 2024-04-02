@@ -1,4 +1,4 @@
-package LeetCode;
+package LeetCode.April;
 
 public class April_1_LengthOfLastWord {
     public int lengthOfLastWord(String s) {
